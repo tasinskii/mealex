@@ -1,0 +1,31 @@
+<h1 class= "p-5 text-3xl font-bold"> New Item: </h1>
+<%= form_with model: @bid do |form| %>
+  <div class= "transform translate-x-20 p-10 grid grid-cols-1 gap-4 bg-gradient-to-r from-indigo-100 to-blue-100 max-w-xl rounded-xl">
+    <div class= "grid grid-cols-1 max-w-md">
+      <%= form.label "Location" %>
+      <%= form.text_field :loc %>
+    </div>
+    <div class= "grid grid-cols-1 max-w-md">
+      <%= form.label "Item" %>
+      <%= form.text_field :item %>
+    </div>
+    <div class= "grid grid-cols-1 max-w-md">
+      <%= form.label "Price" %>
+      <%= form.text_field :price%>
+    </div>
+    <div class= "grid grid-cols-1 max-w-md">
+      <%= form.label "Phone Number" %>
+      <%= form.text_field :phnumber %>
+    </div>
+    <div class= "grid grid-cols-2 max-w-sm justify-self-start">
+      <%= form.radio_button :bid_or_offer, "Bid"%>
+      <%= form.label :bid_or_offer_bid, "Bid"%>
+      <%= form.radio_button :bid_or_offer, "Offer"%>
+      <%= form.label :bid_or_offer_bid, "Offer"%>
+    </div>
+    <div class= "bg-indigo-300 w-28 rounded-xl text-center hover:bg-green-300">
+      <%= form.submit "Create Item" %>
+    </div>
+  </div>
+
+<% end %>

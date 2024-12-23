@@ -1,0 +1,16 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<h1 class= "text-3xl font-bold p-4"> Create Account </h1>
+<div class= "transform translate-x-20 p-2">
+  <%= form_with model: @user do |form| %>
+    <div class= "grid p-2 max-cols-1 max-w-52">
+        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", 
+            placeholder: "Enter your email address", value: params[:email_address]
+        %> <br>
+        <%= form.password_field :password, required: true, placeholder: "Enter your password", maxlength: 72 %><br> 
+      <div class= "transform bg-indigo-200 text-center max-w-32 text-md rounded-lg">
+        <%= form.submit "Create Account" %>
+      </div>
+    </div>
+</div>
+<% end %>

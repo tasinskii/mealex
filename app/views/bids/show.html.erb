@@ -1,0 +1,13 @@
+<% if @bid.bid_or_offer == true%>
+  <h1>Bid for <%= @bid.item%> at <%= @bid.loc%> </h1>
+<%else%>
+  <h1> Offer for <%= @bid.item%> at <%= @bid.loc%> </h1>
+<%end%>
+<div>
+  <% if authenticated? %>
+      <% if get_user_id == @bid.user_id %>
+        <%= button_to "Delete item", @bid, method: :delete %>
+      <% end %>
+  <% end %>
+</div>
+<%= link_to "Back", bids_path %>
