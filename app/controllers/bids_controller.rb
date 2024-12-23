@@ -32,6 +32,6 @@ class BidsController < ApplicationController
       @bid = Bid.find(params[:id])
     end
     def bid_params
-      params.expect(bid: [:loc, :item, :price, :phnumber, :bid_or_offer, :user_id])
+      params.expect(bid: [ :loc, :item, :price, :phnumber, :bid_or_offer, :user_id ])
     end
 end

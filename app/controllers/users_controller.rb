@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   allow_unauthenticated_access only: %i[new create]
-  
+
   def show
   end
 
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    begin 
+    begin
       @user = User.new(user_params)
       if @user.save
         redirect_to new_session_path
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         redirect_to new_user_path, alert: "Email already in use"
       end
     rescue ActiveRecord::RecordNotUnique
-      redirect_to new_user_path, alert: "Email already in use" 
+      redirect_to new_user_path, alert: "Email already in use"
     end
   end
 

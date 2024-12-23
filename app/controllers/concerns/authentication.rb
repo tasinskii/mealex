@@ -16,7 +16,7 @@ module Authentication
     def authenticated?
       resume_session
     end
-    
+
     def get_user_id
       Current.session.user_id
     end
